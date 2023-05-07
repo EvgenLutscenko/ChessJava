@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.piece.*;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Board {
     HashMap<Coordinates, Piece> pieces = new HashMap<>();
@@ -65,5 +65,31 @@ public class Board {
 
     public static boolean isSquareDark(Coordinates coordinates){
         return ((coordinates.file.ordinal() + coordinates.rank) % 2) == 0;
+    }
+
+    public boolean isSquareAttacedByColor(Color opposite, Coordinates coordinates) {
+        List<Piece> pieces = getPiecesByColor(opposite);
+
+        for (Piece piece : pieces) {
+            Set<Coordinates> attackedSquares = piece.getAttackedSquare(this);
+
+            if (attackedSquares.contains(coordinates)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<Piece> getPiecesByColor(Color opposite) {
+        List<Piece> result = new ArrayList<>();
+
+        for (Piece piece : pieces.values()) {
+            if (piece.color == opposite) {
+                result.add(piece);
+            }
+        }
+
+        return result;
     }
 }
