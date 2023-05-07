@@ -1,9 +1,8 @@
 package org.example.piece;
 
-import org.example.Board;
-import org.example.BoardUtils;
-import org.example.Color;
-import org.example.Coordinates;
+import org.example.Board.Board;
+import org.example.Board.BoardUtils;
+import org.example.Coordinates.Coordinates;
 
 import java.util.List;
 

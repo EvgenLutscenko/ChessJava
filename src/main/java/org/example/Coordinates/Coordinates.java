@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Coordinates;
 
 
 import java.util.Objects;

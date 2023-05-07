@@ -1,9 +1,8 @@
 package org.example.piece;
 
-import org.example.Board;
-import org.example.Color;
-import org.example.Coordinates;
-import org.example.CoordinetesShift;
+import org.example.Board.Board;
+import org.example.Coordinates.Coordinates;
+import org.example.Coordinates.CoordinetesShift;
 
 import java.util.HashSet;
 import java.util.Set;

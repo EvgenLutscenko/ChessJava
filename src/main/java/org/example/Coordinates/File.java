@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Coordinates;
 
 public enum File {
     A, B, C, D, E, F, G, H;

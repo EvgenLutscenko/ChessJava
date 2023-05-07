@@ -1,9 +1,8 @@
 package org.example.piece;
 
-import org.example.*;
+import org.example.Coordinates.Coordinates;
+import org.example.Coordinates.CoordinetesShift;
 
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Bishop extends LongRangePiece implements IBishop{

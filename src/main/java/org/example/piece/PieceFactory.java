@@ -1,5 +1,6 @@
-package org.example;
+package org.example.piece;
 
+import org.example.Coordinates.Coordinates;
 import org.example.piece.*;
 
 public class PieceFactory {

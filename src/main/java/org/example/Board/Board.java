@@ -1,11 +1,21 @@
-package org.example;
+package org.example.Board;
 
+import org.example.piece.Color;
+import org.example.Coordinates.Coordinates;
+import org.example.Coordinates.File;
+import org.example.Coordinates.Move;
 import org.example.piece.*;
 
 import java.util.*;
 
 public class Board {
+    final String startingFen;
+    public List<Move> moves = new ArrayList<>();
     HashMap<Coordinates, Piece> pieces = new HashMap<>();
+
+    public Board(String fen) {
+        this.startingFen = fen;
+    }
 
     public void setPiece(Coordinates coordinates, Piece piece){
         piece.coordinates = coordinates;
@@ -21,7 +31,7 @@ public class Board {
 
         removePiece(from);
         setPiece(to, piece);
-
+        moves.add(new Move(from, to));
     }
 
     public void setDefaultPiecesPosition(){
@@ -81,7 +91,7 @@ public class Board {
         return false;
     }
 
-    private List<Piece> getPiecesByColor(Color opposite) {
+    public List<Piece> getPiecesByColor(Color opposite) {
         List<Piece> result = new ArrayList<>();
 
         for (Piece piece : pieces.values()) {

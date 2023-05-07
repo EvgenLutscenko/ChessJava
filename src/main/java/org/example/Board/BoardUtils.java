@@ -1,4 +1,7 @@
-package org.example;
+package org.example.Board;
+
+import org.example.Coordinates.Coordinates;
+import org.example.Coordinates.File;
 
 import java.util.ArrayList;
 import java.util.List;

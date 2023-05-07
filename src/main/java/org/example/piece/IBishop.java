@@ -1,6 +1,6 @@
 package org.example.piece;
 
-import org.example.CoordinetesShift;
+import org.example.Coordinates.CoordinetesShift;
 
 import java.util.HashSet;
 import java.util.Set;

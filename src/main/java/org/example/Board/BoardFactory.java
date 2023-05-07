@@ -1,11 +1,15 @@
-package org.example;
+package org.example.Board;
 
+import org.example.Coordinates.Coordinates;
+import org.example.Coordinates.File;
+import org.example.Coordinates.Move;
+import org.example.piece.PieceFactory;
 import org.example.piece.Piece;
 
 public class BoardFactory {
 
     public static Board fromFen(String fen){
-        Board board = new Board();
+        Board board = new Board(fen);
         String[] parts = fen.split(" ");
         String piecePositions = parts[0];
 
@@ -35,5 +39,15 @@ public class BoardFactory {
         }
 
         return board;
+    }
+
+    public static Board copy(Board board){
+        Board clone = fromFen(board.startingFen);
+
+        for(Move move : board.moves){
+            clone.movePice(move.from, move.to);
+        }
+
+        return clone;
     }
 }

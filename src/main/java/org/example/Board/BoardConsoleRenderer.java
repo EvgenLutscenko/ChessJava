@@ -1,8 +1,10 @@
-package org.example;
+package org.example.Board;
 
+import org.example.piece.Color;
+import org.example.Coordinates.Coordinates;
+import org.example.Coordinates.File;
 import org.example.piece.Piece;
 
-import java.sql.Struct;
 import java.util.Set;
 
 public class BoardConsoleRenderer {
@@ -90,6 +92,6 @@ public class BoardConsoleRenderer {
 
     private String getSpriteForEmptySquare(Coordinates coordinates, boolean isHighlited) {
 
-        return colorizeSprite("    ", Color.WHITE, Board.isSquareDark(coordinates), isHighlited);
+        return colorizeSprite("   ", Color.WHITE, Board.isSquareDark(coordinates), isHighlited);
     }
 }
